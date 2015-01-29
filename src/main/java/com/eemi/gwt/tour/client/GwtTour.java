@@ -26,7 +26,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.ScriptInjector;
-import com.google.gwt.dom.client.StyleInjector;
 
 /**
  * Main GwtTour class
@@ -54,7 +53,7 @@ public class GwtTour {
     public static void load() {
         if (!isLoaded()) {
             GwtTourResources resources = GWT.create(GwtTourResources.class);
-            StyleInjector.inject(resources.css().getText());
+            resources.css().ensureInjected();
             ScriptInjector.fromString(resources.js().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
         }
     }
@@ -119,7 +118,8 @@ public class GwtTour {
      * FIXME: Not yet fully implemented
      * @return
      */
-    public static Tour getCurrTour(){
+    @SuppressWarnings("unused")
+	public static Tour getCurrTour(){
         TourPeer peer = (TourPeer) _getCurrTour();
         Tour tour = null;
         if (peer != null){
