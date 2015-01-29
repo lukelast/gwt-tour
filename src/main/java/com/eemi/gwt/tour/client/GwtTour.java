@@ -15,7 +15,6 @@
 **************************************************************************/
 package com.eemi.gwt.tour.client;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
