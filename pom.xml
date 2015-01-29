@@ -43,10 +43,16 @@
 
 	<build>
 
-		<!-- Include .gwt.xml -->
+		<!-- Include java source code in jar for GWT. -->
 		<resources>
 			<resource>
-				<directory>src/main/java</directory>
+				<directory>${project.build.sourceDirectory}</directory>
+				<includes>
+					<include>**/*.java</include>
+					<include>**/*.gwt.xml</include>
+					<include>**/*.gss</include>
+					<include>**/*.js</include>
+				</includes>
 			</resource>
 		</resources>
 
