@@ -37,16 +37,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+ 
+ @external 'hopscotch-*';
+ 
+ @external '*';
+ 
 .animated {
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -ms-animation-duration: 1s;
-  -o-animation-duration: 1s;
   animation-duration: 1s;
 }
 @-webkit-keyframes fadeInUp {
@@ -255,47 +258,38 @@ div.hopscotch-bubble .hopscotch-nav-button {
   zoom: 1;
   *display: inline;
   vertical-align: middle;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 div.hopscotch-bubble .hopscotch-nav-button:hover {
   *zoom: 1;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 div.hopscotch-bubble .hopscotch-nav-button:active {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
 }
 div.hopscotch-bubble .hopscotch-nav-button.next {
   border-color: #1b5480;
-  color: #fff;
+  color: white;
   margin: 0 0 0 10px;
   /* HS specific*/
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   background-color: #287bbc;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#287bbc', endColorstr='#23639a');
+  /* @alternate */
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #287bbc), color-stop(100%, #23639a));
+  /* @alternate */
   background-image: -webkit-linear-gradient(top, #287bbc 0%, #23639a 100%);
+  /* @alternate */
   background-image: -moz-linear-gradient(top, #287bbc 0%, #23639a 100%);
-  background-image: -o-linear-gradient(top, #287bbc 0%, #23639a 100%);
   background-image: linear-gradient(top, #287bbc 0%, #23639a 100%);
 }
 div.hopscotch-bubble .hopscotch-nav-button.next:hover {
   background-color: #2672ae;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#2672ae', endColorstr='#1e4f7e');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2672ae), color-stop(100%, #1e4f7e));
-  background-image: -webkit-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
-  background-image: -moz-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
-  background-image: -o-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
+  /* @alternate */background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2672ae), color-stop(100%, #1e4f7e));
+  /* @alternate */background-image: -webkit-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
+  /* @alternate */background-image: -moz-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
   background-image: linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
 }
 div.hopscotch-bubble .hopscotch-nav-button.prev {
@@ -304,45 +298,31 @@ div.hopscotch-bubble .hopscotch-nav-button.prev {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   background-color: #f2f2f2;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#f2f2f2', endColorstr='#e9e9e9');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f2f2), color-stop(100%, #e9e9e9));
-  background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
-  background-image: -moz-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
-  background-image: -o-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
+  /* @alternate */background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f2f2), color-stop(100%, #e9e9e9));
+  /* @alternate */background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
+  /* @alternate */background-image: -moz-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
   background-image: linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
 }
 div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
   background-color: #e8e8e8;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE8E8E8', endColorstr='#FFA9A9A9');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8e8e8), color-stop(13%, #e3e3e3), color-stop(32%, #d7d7d7), color-stop(71%, #b9b9b9), color-stop(100%, #a9a9a9));
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-  background-image: -moz-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
+  /* @alternate */background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8e8e8), color-stop(13%, #e3e3e3), color-stop(32%, #d7d7d7), color-stop(71%, #b9b9b9), color-stop(100%, #a9a9a9));
+  /* @alternate */background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
+  /* @alternate */background-image: -moz-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
   background-image: linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
 }
 div.hopscotch-bubble {
-  background-color: #ffffff;
-  border: 5px solid #000000;
-  /* default */
+  background-color: white;
   border: 5px solid rgba(0, 0, 0, 0.5);
-  /* transparent, if supported */
   color: #333;
   font-family: Helvetica, Arial;
   font-size: 13px;
   position: absolute;
   z-index: 999999;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
-  -moz-background-clip: padding;
-  /* for Mozilla browsers*/
-  -webkit-background-clip: padding;
-  /* Webkit */
   background-clip: padding-box;
-  /*  browsers with full support */
 }
 div.hopscotch-bubble * {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 div.hopscotch-bubble.animate {
@@ -371,7 +351,7 @@ div.hopscotch-bubble .hide-all {
   display: none;
 }
 div.hopscotch-bubble h3 {
-  color: #000;
+  color: black;
   font-family: Helvetica, Arial;
   font-size: 16px;
   font-weight: bold;
@@ -444,14 +424,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.up {
   left: 10px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow {
-  border-bottom: 17px solid #ffffff;
+  border-bottom: 17px solid white;
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
   position: relative;
   top: -10px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow-border {
-  border-bottom: 17px solid #000000;
   border-bottom: 17px solid rgba(0, 0, 0, 0.5);
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
@@ -461,14 +440,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down {
   left: 10px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow {
-  border-top: 17px solid #ffffff;
+  border-top: 17px solid white;
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
   position: relative;
   top: -24px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow-border {
-  border-top: 17px solid #000000;
   border-top: 17px solid rgba(0, 0, 0, 0.5);
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
@@ -479,14 +457,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.left {
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow {
   border-bottom: 17px solid transparent;
-  border-right: 17px solid #ffffff;
+  border-right: 17px solid white;
   border-top: 17px solid transparent;
   position: relative;
   left: 7px;
   top: -34px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow-border {
-  border-right: 17px solid #000000;
   border-right: 17px solid rgba(0, 0, 0, 0.5);
   border-bottom: 17px solid transparent;
   border-top: 17px solid transparent;
@@ -497,14 +474,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.right {
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow {
   border-bottom: 17px solid transparent;
-  border-left: 17px solid #ffffff;
+  border-left: 17px solid white;
   border-top: 17px solid transparent;
   position: relative;
   left: -7px;
   top: -34px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow-border {
-  border-left: 17px solid #000000;
   border-left: 17px solid rgba(0, 0, 0, 0.5);
   border-bottom: 17px solid transparent;
   border-top: 17px solid transparent;
