@@ -18,14 +18,15 @@ package com.eemi.gwt.tour.client;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-
 import com.eemi.gwt.tour.client.jso.Function;
 import com.eemi.gwt.tour.client.jso.TourPeer;
-import com.eemi.gwt.tour.client.resources.GwtTourResources;
+import com.eemi.gwt.tour.client.resources.GwtTourJsResources;
+import com.eemi.gwt.tour.client.resources.GwtTourCssResources;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.ScriptInjector;
+import com.google.gwt.resources.client.CssResource;
 
 /**
  * Main GwtTour class
@@ -48,14 +49,21 @@ public class GwtTour {
     }-*/;
     
     /**
-     * Load the javasccript and the stylesheet by using the ScriptInjector
+     * Load the java-script and the style-sheet by using the ScriptInjector.
      */
-    public static void load() {
+    public static void loadJs() {
         if (!isLoaded()) {
-            GwtTourResources resources = GWT.create(GwtTourResources.class);
-            resources.css().ensureInjected();
+           GwtTourJsResources resources = GWT.create(GwtTourJsResources.class);
             ScriptInjector.fromString(resources.js().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
         }
+    }
+    
+    /**
+     * Load the style-sheet by using the {@link CssResource}.
+     */
+    public static void loadCss(){
+       GwtTourCssResources resources = GWT.create(GwtTourCssResources.class);
+       resources.css().ensureInjected();
     }
 
     /**

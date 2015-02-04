@@ -2,7 +2,7 @@ package com.eemi.gwt.tour.client.resources;
 
 import com.google.gwt.resources.client.CssResource;
 
-public interface Css extends CssResource {
+public interface HopscotchCss extends CssResource {
 
     String animated();
 
